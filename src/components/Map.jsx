@@ -28,8 +28,8 @@ const Map = () => {
       projection="geoAzimuthalEqualArea"
       projectionConfig={{
         rotate: [58, 20, 0],
-        center: [-5, 14],
-        scale: 900,
+        center: [-8, 14],
+        scale: 1000,
       }}style={{width:"100%", height:"100%"}}
     >
       <Geographies
