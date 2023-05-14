@@ -7,7 +7,7 @@ const Section = styled.div`
 `;
 
 const Container = styled.div`
-  width: 1200px;
+  width: 1100px;
   display: flex;
   justify-content: space-between;
   align-items: center;
@@ -48,7 +48,7 @@ const Icon = styled.img`
 
 const Button = styled.button`
   width: 100px;
-  padding: 4px;
+  padding: 6px;
   background-color: #da4ea2;
   color: white;
   border: none;
