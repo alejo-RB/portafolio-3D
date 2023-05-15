@@ -39,7 +39,7 @@ const ListItem = styled.li`
   color: transparent;
   -webkit-text-stroke: 1.2px white;
   position: relative;
-  line-height: 70px;
+  line-height: 75px;
 
   ::after {
     content: "${(props) => props.text}";

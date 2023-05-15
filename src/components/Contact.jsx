@@ -1,6 +1,7 @@
 import React from "react";
 import styled from "styled-components";
 import Map from './Map'
+import { handler } from "tailwind-scrollbar-hide";
 
 const Section = styled.div`
   height: 100vh;
@@ -67,7 +68,7 @@ const Contact = () => {
     <Section>
       <Container>
         <Left>
-          <Form>
+          <Form onSubmit={handleS}>
             <Title>Contact Us</Title>
             <Input placeholder="Name"/>
             <Input placeholder="Email"/>
