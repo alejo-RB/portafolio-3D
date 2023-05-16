@@ -1,7 +1,7 @@
-import React from "react";
+import React, { useRef, useState } from "react";
 import styled from "styled-components";
-import Map from './Map'
-import { handler } from "tailwind-scrollbar-hide";
+import Map from "./Map";
+import emailjs from "@emailjs/browser";
 
 const Section = styled.div`
   height: 100vh;
@@ -40,6 +40,7 @@ const Input = styled.input`
   background-color: #e8e6e6;
   border: none;
   border-radius: 3px;
+  color: black;
 `;
 
 const TextArea = styled.textarea`
@@ -47,6 +48,7 @@ const TextArea = styled.textarea`
   background-color: #e8e6e6;
   border: none;
   border-radius: 3px;
+  color: black;
 `;
 
 const Button = styled.button`
@@ -64,20 +66,50 @@ const Right = styled.div`
 `;
 
 const Contact = () => {
+  const ref = useRef();
+  const [success, setSuccess] = useState(null);
+
+  const handleSubmit = (e) => {
+    e.preventDefault();
+
+    emailjs
+      .sendForm(
+        "service_jjsy1q1",
+        "template_tgacr9q",
+        ref.current,
+        "AGy475iyLYZZxWec1"
+      )
+      .then(
+        (result) => {
+          console.log(result.text);
+          setSuccess(true);
+        },
+        (error) => {
+          console.log(error.text);
+          setSuccess(false);
+        }
+      );
+  };
   return (
     <Section>
       <Container>
         <Left>
-          <Form onSubmit={handleS}>
+          <Form ref={ref} onSubmit={handleSubmit}>
             <Title>Contact Us</Title>
-            <Input placeholder="Name"/>
-            <Input placeholder="Email"/>
-            <TextArea placeholder="Write your message" rows={5}/>
-            <Button>Send</Button>
+            <Input placeholder="Name" name="name" />
+            <Input placeholder="Email" name="email" />
+            <TextArea
+              placeholder="Write your message"
+              name="message"
+              rows={5}
+            />
+            <Button type="submit">Send</Button>
+            {success &&
+              "Your message has been sent. We'll get back to you soon :)"}
           </Form>
         </Left>
         <Right>
-          <Map></Map>
+          <Map/>
         </Right>
       </Container>
     </Section>

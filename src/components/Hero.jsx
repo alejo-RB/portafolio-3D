@@ -1,6 +1,8 @@
 import React from "react";
 import Navbar from "./Navbar";
 import styled from "styled-components";
+import { MeshDistortMaterial, Sphere, OrbitControls } from "@react-three/drei";
+import { Canvas } from "@react-three/fiber";
 
 const Section = styled.div`
   height: 100vh;
@@ -9,12 +11,11 @@ const Section = styled.div`
   flex-direction: column;
   align-items: center;
   justify-content: space-between;
-  
+
   scroll-snap-type: y mandatory;
   scroll-behavior: smooth;
   overflow-y: auto;
-  scrollbar-width: none; 
-  
+  scrollbar-width: none;
 `;
 
 const Container = styled.div`
@@ -63,7 +64,6 @@ const Button = styled.button`
   cursor: pointer;
 `;
 
-
 const Right = styled.div`
   flex: 3;
   position: relative;
@@ -80,13 +80,11 @@ const Img = styled.img`
   margin: auto;
   animation: animate 2s infinite ease alternate;
   @keyframes animate {
-    to{
+    to {
       transform: translateY(18px);
     }
   }
 `;
- 
-
 
 const Hero = () => {
   return (
@@ -96,14 +94,28 @@ const Hero = () => {
         <Left>
           <Title>Think. Make. Solve.</Title>
           <WhatWeDo>
-            <Line src="./img/line.png"/>
+            <Line src="./img/line.png" />
             <Subtitle>What we do</Subtitle>
           </WhatWeDo>
-          <Desc>we enjoy creating delightful, human-centered digital experiences.</Desc>
+          <Desc>
+            we enjoy creating delightful, human-centered digital experiences.
+          </Desc>
           <Button>Learn More</Button>
         </Left>
         <Right>
-          {/* 3d model */}
+          <Canvas>
+            <OrbitControls enableZoom={false} />
+            <ambientLight intensity={1} />
+            <directionalLight position={[3, 2, 1]} />
+            <Sphere args={[1, 100, 200]} scale={2.7}>
+              <MeshDistortMaterial
+                color="#220736"
+                attach="material"
+                distort={0.5}
+                speed={2}
+              />
+            </Sphere>
+          </Canvas>
           <Img src="./img/moon.png" />
         </Right>
       </Container>

@@ -19,10 +19,10 @@ const Container = styled.div`
 function App() {
   return (
     <Container>
-      <Hero />
-      <Who />
-      <Works />
-      <Contact />
+      <Hero/>
+      <Who/>
+      <Works/>
+      <Contact/>
     </Container>
   );
 }
