@@ -20,9 +20,9 @@ function App() {
   return (
     <Container>
       <Hero/>
-      {/*<Who/>*/}
-      {/*<Works/>*/}
-      {/*<Contact/>*/}
+      <Who/>
+      <Works/>
+      <Contact/>
     </Container>
   );
 }
