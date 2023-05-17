@@ -1,5 +1,11 @@
 import React from "react";
+import { useState } from "react";
 import styled from "styled-components";
+import WebDesign from "./WebDesign";
+import Development from "./Development";
+import Illustration from "./Illustration";
+import ProductDesign from "./ProductDesign";
+import SocialMedia from "./SocialMedia";
 
 const data = [
   "Web Design",
@@ -14,6 +20,10 @@ const Section = styled.div`
   scroll-snap-align: center;
   display: flex;
   justify-content: center;
+  position: relative;
+  color: black;
+  font-size: 11px;
+  font-weight: 300;
 `;
 const Container = styled.div`
   width: 1100px;
@@ -56,7 +66,7 @@ const ListItem = styled.li`
     ::after {
       animation: moveText 0.5s linear both;
       @keyframes moveText {
-        to{
+        to {
           width: 100%;
         }
       }
@@ -68,19 +78,32 @@ const Right = styled.div`
 `;
 
 const Works = () => {
+  const [work, setWork] = useState("Web Design");
   return (
     <Section>
       <Container>
         <Left>
           <List>
             {data.map((item) => (
-              <ListItem key={item} text={item}>
+              <ListItem key={item} text={item} onClick={()=>setWork(item)}>
                 {item}
               </ListItem>
             ))}
           </List>
         </Left>
-        <Right></Right>
+        <Right>
+          {work === "Web Design" ? (
+            <WebDesign />
+          ) : work === "Development" ? (
+            <Development />
+          ) : work === "Illustration" ? (
+            <Illustration />
+          ) : work === "Product Design" ? (
+            <ProductDesign />
+          ) : (
+            <SocialMedia />
+          )}
+        </Right>
       </Container>
     </Section>
   );

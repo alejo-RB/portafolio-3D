@@ -4,6 +4,10 @@ import styled from 'styled-components'
 const Section = styled.div`
   display: flex;
   justify-content: center;
+
+  @media only screen and (max-width: 768px){
+    width: 100%;
+  }
 `;
 
 const Container = styled.div`
@@ -11,6 +15,11 @@ const Container = styled.div`
   display: flex;
   justify-content: space-between;
   align-items: center;
+
+  @media only screen and (max-width: 768px){
+    width: 100%;
+    padding: 10px;
+  }
 `;
 
 const Links = styled.div`
@@ -28,6 +37,10 @@ const List = styled.ul`
   display: flex;
   gap: 20px;
   list-style: none;
+
+  @media only screen and (max-width: 768px){
+    display: none;
+  }
 `;
 
 const ListItem = styled.li`
