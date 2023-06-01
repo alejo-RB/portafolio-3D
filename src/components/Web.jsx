@@ -11,9 +11,10 @@ import React, { useRef } from 'react'
 import { useGLTF } from '@react-three/drei'
 
 export default function Model(props) {
-  const { nodes, materials } = useGLTF('/web-transformed.glb')
+  const group = useRef()
+  const { nodes, materials } = useGLTF('./web-transformed.glb')
   return (
-    <group {...props} dispose={null}>
+    <group ref={group} {...props} dispose={null}>
       <group rotation={[-Math.PI / 2, 0, 0]}>
         <group position={[-0.95, 0, 0.59]} scale={[2.95, 0.07, 1]}>
           <mesh geometry={nodes.Cube_0.geometry} material={materials['Material.010']} />
@@ -58,4 +59,4 @@ export default function Model(props) {
   )
 }
 
-useGLTF.preload('/web-transformed.glb')
+useGLTF.preload('./web-transformed.glb')

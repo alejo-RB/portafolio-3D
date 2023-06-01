@@ -11,9 +11,10 @@ import React, { useRef } from 'react'
 import { useGLTF } from '@react-three/drei'
 
 export default function Model(props) {
-  const { nodes, materials } = useGLTF('/camera-transformed.glb')
+  const group = useRef()
+  const { nodes, materials } = useGLTF('./camera-transformed.glb')
   return (
-    <group {...props} dispose={null}>
+    <group ref={group} {...props} dispose={null}>
       <group position={[-2.5, 0.9, 0.51]} scale={0.5}>
         <mesh geometry={nodes.Object_4.geometry} material={materials.leica_black} />
         <mesh geometry={nodes.Object_5.geometry} material={materials.leather} />
@@ -34,4 +35,4 @@ export default function Model(props) {
   )
 }
 
-useGLTF.preload('/camera-transformed.glb')
+useGLTF.preload('./camera-transformed.glb')

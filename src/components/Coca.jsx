@@ -10,10 +10,11 @@ Title: Coca Cola Soda Can
 import React, { useRef } from 'react'
 import { useGLTF } from '@react-three/drei'
 
-export default function Model(props) {
-  const { nodes, materials } = useGLTF('/coca-transformed.glb')
+export default function Model(props) { 
+  const group = useRef()
+  const { nodes, materials } = useGLTF('./coca-transformed.glb')
   return (
-    <group {...props} dispose={null}>
+    <group ref={group} {...props} dispose={null}>
       <group scale={0.01}>
         <group rotation={[-Math.PI / 2, 0, 0]} scale={89.14}>
           <mesh geometry={nodes.Body_Wrap_0.geometry} material={materials.Wrap} />
@@ -26,4 +27,4 @@ export default function Model(props) {
   )
 }
 
-useGLTF.preload('/coca-transformed.glb')
+useGLTF.preload('./coca-transformed.glb')
