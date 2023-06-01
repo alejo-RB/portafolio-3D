@@ -97,7 +97,7 @@ Error generating stack: `+s.message+`
   border: none;
   border-radius: 5px;
   cursor: pointer;
-`,vU=()=>ie.jsx(uU,{children:ie.jsxs(cU,{children:[ie.jsxs(fU,{children:[ie.jsx(hU,{src:"./img/logo.png/"}),ie.jsxs(dU,{children:[ie.jsx(Vp,{children:"Home"}),ie.jsx(Vp,{children:"Studio"}),ie.jsx(Vp,{children:"Works"}),ie.jsx(Vp,{children:"Contact"})]})]}),ie.jsxs(pU,{children:[ie.jsx(mU,{src:"./img/search.png"}),ie.jsx(gU,{children:"Hire Now"})]})]})});function ar(){return ar=Object.assign?Object.assign.bind():function(n){for(var e=1;e<arguments.length;e++){var t=arguments[e];for(var r in t)Object.prototype.hasOwnProperty.call(t,r)&&(n[r]=t[r])}return n},ar.apply(this,arguments)}/**
+`,vU=()=>ie.jsx(uU,{children:ie.jsxs(cU,{children:[ie.jsxs(fU,{children:[ie.jsx(hU,{src:"/img/logo.png/"}),ie.jsxs(dU,{children:[ie.jsx(Vp,{children:"Home"}),ie.jsx(Vp,{children:"Studio"}),ie.jsx(Vp,{children:"Works"}),ie.jsx(Vp,{children:"Contact"})]})]}),ie.jsxs(pU,{children:[ie.jsx(mU,{src:"./img/search.png"}),ie.jsx(gU,{children:"Hire Now"})]})]})});function ar(){return ar=Object.assign?Object.assign.bind():function(n){for(var e=1;e<arguments.length;e++){var t=arguments[e];for(var r in t)Object.prototype.hasOwnProperty.call(t,r)&&(n[r]=t[r])}return n},ar.apply(this,arguments)}/**
  * @license
  * Copyright 2010-2023 Three.js Authors
  * SPDX-License-Identifier: MIT
